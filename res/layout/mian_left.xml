@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    android:orientation="horizontal" >
+
+    <!-- 占屏幕2/3 -->
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp" >
+
+            <!-- 菜单顶部 start -->
+
+            <LinearLayout
+                android:id="@+id/ml_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:orientation="horizontal" >
+
+                <!-- 头像图片 -->
+
+                <com.septinary.xbwapp.views.RoundImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/default_male"
+                    android:scaleType="centerCrop" />
+
+                <!-- 名字与等级start -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ml_login"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/size3" />
+                    <!-- 等级图标 -->
+
+                    <LinearLayout
+                        android:id="@+id/ml_imgicons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="gone" >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/grade_icon" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/grade_icon" />
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- 名字与等级end -->
+            </LinearLayout>
+            <!-- 顶部菜单end -->
+
+
+            <!-- 个性签名 -->
+
+            <TextView
+                android:id="@+id/ml_explain"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/ml_top"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ml_explain"
+                android:clickable="true"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="@string/ml_explain"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/size3" />
+
+            <!-- 菜单 start -->
+
+            <ListView
+                android:id="@+id/ml_menu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/ml_bottom"
+                android:layout_below="@id/ml_explain"
+                android:listSelector="@android:color/transparent" />
+            <!-- 菜单 end -->
+
+
+            <!-- 底部 start -->
+
+            <LinearLayout
+                android:id="@id/ml_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/click_effect"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/ml_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/click_effect"
+                    android:drawableLeft="@drawable/setting"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:text=" 设置"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/size3" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/white" />
+
+                <Button
+                    android:id="@+id/ml_cut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/click_effect"
+                    android:drawableLeft="@drawable/user_head"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:text=" 我是老师"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/size3" />
+            </LinearLayout>
+
+            <!-- 底部 end -->
+
+        </RelativeLayout>
+        
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+</LinearLayout>

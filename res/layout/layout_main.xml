@@ -1,0 +1,19 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.septinary.xbwapp.activity.main.MainActivity" >
+
+    <com.septinary.xbwapp.views.ResideLayout
+        android:id="@+id/main_reside"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <include 
+            layout="@layout/mian_left"/>
+
+        <include 
+            layout="@layout/main_right"/>
+    </com.septinary.xbwapp.views.ResideLayout>
+
+</RelativeLayout>

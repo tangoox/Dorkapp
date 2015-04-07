@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:orientation="vertical">
+
+        <!-- top start -->
+
+        <RelativeLayout
+            android:id="@+id/mr_top"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/xb_color" >
+
+            <ImageButton
+                android:id="@+id/mr_slidebtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:src="@drawable/mr_slidebtn" />
+
+            <TextView
+                android:id="@+id/mr_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableRight="@drawable/mr_select_address"
+                android:padding="5dp"
+                android:text="贵阳 "
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/title" />
+
+            <ImageButton
+                android:id="@+id/mr_coord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:layout_toLeftOf="@+id/mr_search"
+                android:background="@drawable/mr_coord" />
+
+            <ImageButton
+                android:id="@id/mr_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/mr_search" />
+        </RelativeLayout>
+        <!-- top end -->
+
+
+        <!-- 滚动广告 -->
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/mr_rollad"
+            android:layout_width="match_parent"
+            android:layout_height="150dp" />
+
+        <!-- 分类列表 -->
+
+        <ListView
+            android:id="@+id/mr_classlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</ScrollView>
