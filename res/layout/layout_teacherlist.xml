@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/act_background" >
+
+    <!-- top start -->
+
+    <RelativeLayout
+        android:id="@+id/lt_top"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/xb_color" >
+
+        <ImageButton
+            android:id="@+id/lt_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:src="@drawable/lt_back" />
+
+        <TextView
+            android:id="@+id/lt_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawableRight="@drawable/mr_select_address"
+            android:padding="5dp"
+            android:text="贵阳 "
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title" />
+
+        <ImageButton
+            android:id="@+id/lt_coord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/lt_search"
+            android:background="@drawable/mr_coord" />
+
+        <ImageButton
+            android:id="@id/lt_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/mr_search" />
+    </RelativeLayout>
+    <!-- top end -->
+
+
+    <!-- 筛选 start -->
+
+    <LinearLayout
+        android:id="@+id/lt_sort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lt_top"
+        android:background="@android:color/white"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/lt_classification"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:drawableRight="@drawable/lt_dropdown"
+                android:padding="10dp"
+                android:text="分类筛选 "
+                android:textSize="@dimen/size2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/lt_sorting"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:drawableRight="@drawable/lt_dropdown"
+                android:padding="10dp"
+                android:text="排序筛选 "
+                android:textSize="@dimen/size2" />
+        </LinearLayout>
+    </LinearLayout>
+    <!-- 筛选 end -->
+
+    <RelativeLayout
+        android:id="@+id/lt_toast"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/lt_top"
+        android:background="@android:color/transparent" />
+
+    <com.septinary.xbwapp.views.ViewPagerSwipeRefreshLayout
+        android:id="@+id/lt_refreshview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/lt_sort"
+        android:layout_marginTop="2dp" >
+
+        <com.septinary.xbwapp.views.ViewPagerScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <!-- 分类列表 -->
+
+                <com.septinary.xbwapp.views.ScrollListView
+                    android:id="@+id/lt_teacherlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white" />
+
+            </LinearLayout>
+        </com.septinary.xbwapp.views.ViewPagerScrollView>
+    </com.septinary.xbwapp.views.ViewPagerSwipeRefreshLayout>
+
+</RelativeLayout>

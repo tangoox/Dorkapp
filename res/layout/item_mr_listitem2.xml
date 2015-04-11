@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3" 
+        android:layout_marginLeft="30dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/iml2_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="外语语言"
+            android:textSize="@dimen/title" />
+        
+        <TextView 
+            android:id="@+id/iml2_entext"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iml2_title"
+            android:text="Foreign language"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/size3"/>
+        
+        <LinearLayout 
+            android:id="@+id/iml2_explain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/iml2_entext"
+            android:orientation="horizontal">
+           
+            <TextView 
+                android:id="@+id/iml2_teacher_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/mr_teacher"
+                android:text=" 15个老师"
+                android:textSize="@dimen/size5"
+                android:textColor="@color/xb_text"/>
+            
+            <TextView 
+                android:id="@+id/iml2_course_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:drawableLeft="@drawable/mr_course"
+                android:text=" 22个课程"
+                android:textSize="@dimen/size5"
+                android:textColor="@color/xb_text"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/iml2_img"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:background="@drawable/badimage" />
+</LinearLayout>

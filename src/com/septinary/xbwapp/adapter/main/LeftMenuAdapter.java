@@ -1,11 +1,11 @@
-package com.septinary.xbwapp.adapter;
-
+package com.septinary.xbwapp.adapter.main;
 
 import com.septinary.xbwapp.R;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +19,7 @@ import android.widget.TextView;
  * */
 public class LeftMenuAdapter extends BaseAdapter {
 
+	private static final String TAG = "LeftMenuAdapter";
 	private String[] menu;
 	private int[] menu_icon;
 	private LayoutInflater inflater;
@@ -59,7 +60,7 @@ public class LeftMenuAdapter extends BaseAdapter {
 		holder.imlm_icon.setBackgroundResource(menu_icon[position]);
 		holder.imlm_text.setText(menu[position]);
 		holder.imlm_tips.setVisibility(View.GONE);
-
+		Log.e(TAG, TAG + "执行");
 		return convertView;
 	}
 
@@ -70,7 +71,7 @@ public class LeftMenuAdapter extends BaseAdapter {
 		TextView imlm_text;
 		@InjectView(R.id.imlm_tips)
 		ImageView imlm_tips;
-
+		
 		public LeftMenuViewHolder(View view) {
 			ButterKnife.inject(this, view);
 		}

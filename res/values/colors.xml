@@ -5,4 +5,8 @@
     <color name="clcik_down_black">#3f000000</color>
    	<!-- 学霸主色调 -->
    	<color name="xb_color">#14D7C7</color>
+   	<color name="xb_text">#00A093</color>
+   	<color name="xb_click">#e014D7C7</color>
+   	<!-- Activity底色 -->
+   	<color name="act_background">#EEEEEE</color>
 </resources>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ill_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp" >
+
+        <com.septinary.xbwapp.views.MyHorizontalScrollView
+            android:id="@+id/ill_horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:id="@+id/ill_gallery"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </com.septinary.xbwapp.views.MyHorizontalScrollView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp" >
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/ill_img"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/ill_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/ill_img"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/ill_img"
+            android:textSize="@dimen/size2" />
+
+        <TextView
+            android:id="@+id/ill_range"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/ill_img"
+            android:layout_marginRight="10dp"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/size2" />
+
+        <View
+            android:id="@+id/ill_view"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_alignBottom="@id/ill_img"
+            android:layout_toRightOf="@id/ill_img" />
+
+        <!-- 教师标签 -->
+
+        <com.septinary.xbwapp.views.FlowLayout
+            xmlns:f="http://schemas.android.com/apk/res/com.septinary.xbwapp"
+            android:id="@+id/ill_teacherlable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/ill_view"
+            android:layout_toRightOf="@id/ill_img"
+            f:horizontalSpacing="12dip"
+            f:orientation="horizontal"
+            f:verticalSpacing="12dip" />
+
+        <com.septinary.xbwapp.views.FlowLayout
+            xmlns:f="http://schemas.android.com/apk/res/com.septinary.xbwapp"
+            android:id="@+id/ill_teacheraptitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/ill_teacherlable"
+            f:horizontalSpacing="12dip"
+            f:orientation="horizontal"
+            f:verticalSpacing="12dip" />
+
+        <TextView
+            android:id="@+id/ill_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/ill_teacheraptitude"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/size3" />
+    </RelativeLayout>
+
+</LinearLayout>

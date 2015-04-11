@@ -14,18 +14,13 @@ public class SplashActivity extends BaseActivity{
 
 	@Override
 	public void init(Bundle savedInstanceState) {
-		new Thread(){
+		
+		actHandler.postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				try {
-					Thread.sleep(2000);
-					actHandler.sendEmptyMessage(0);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
+				actHandler.sendEmptyMessage(0);
 			}
-			
-		}.start();
+		}, 2000);
 	}
 
 	@Override
