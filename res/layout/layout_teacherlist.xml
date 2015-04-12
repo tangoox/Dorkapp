@@ -114,24 +114,16 @@
         android:layout_below="@id/lt_sort"
         android:layout_marginTop="2dp" >
 
-        <com.septinary.xbwapp.views.ViewPagerScrollView
+        <!-- 分类列表 -->
+
+        <com.septinary.xbwapp.views.BounceListView
+            android:id="@+id/lt_teacherlist"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical" >
-
-                <!-- 分类列表 -->
-
-                <com.septinary.xbwapp.views.ScrollListView
-                    android:id="@+id/lt_teacherlist"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/white" />
-
-            </LinearLayout>
-        </com.septinary.xbwapp.views.ViewPagerScrollView>
+            android:layout_height="match_parent"
+            android:background="@android:color/white" 
+            android:scrollbars="none"
+            android:overScrollMode="always"/>
+        
     </com.septinary.xbwapp.views.ViewPagerSwipeRefreshLayout>
 
 </RelativeLayout>

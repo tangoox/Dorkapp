@@ -21,7 +21,6 @@ import butterknife.OnClick;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
-import com.android.volley.toolbox.Volley;
 import com.septinary.xbwapp.R;
 import com.septinary.xbwapp.activity.list.TeacherListActivity;
 import com.septinary.xbwapp.adapter.main.LeftMenuAdapter;
@@ -35,8 +34,8 @@ import com.septinary.xbwapp.model.main.Category;
 import com.septinary.xbwapp.utils.ActUtil;
 import com.septinary.xbwapp.utils.AnimationToast;
 import com.septinary.xbwapp.utils.CustomToast;
+import com.septinary.xbwapp.utils.SingleRequestQueue;
 import com.septinary.xbwapp.views.ResideLayout;
-import com.septinary.xbwapp.views.ScrollListView;
 
 /**
  * @author S_ven
@@ -119,7 +118,7 @@ public class MainActivity extends BaseActivity implements OnRefreshListener {
 					"Art and Photography", "10", "12" },
 			{
 					"http://img3.imgtn.bdimg.com/it/u=4081183205,544908962&fm=21&gp=0.jpg",
-					"国学文化", "Chinese culture", "20", "22" }, };
+					"国学文化", "Chinese culture", "20", "22" } };
 
 	private MyActHandler actHandler = new MyActHandler(this) {
 
@@ -138,7 +137,7 @@ public class MainActivity extends BaseActivity implements OnRefreshListener {
 	@Override
 	public void init(Bundle savedInstanceState) {
 		ButterKnife.inject(this);
-		mQueue = Volley.newRequestQueue(this);
+		mQueue = SingleRequestQueue.getRequestQueue(MainActivity.this);
 		mImageLoader = new ImageLoader(mQueue, new BitmapCache());
 		mr_refreshview.setColorSchemeResources(
 				android.R.color.holo_blue_bright,
@@ -200,6 +199,7 @@ public class MainActivity extends BaseActivity implements OnRefreshListener {
 				MainActivity.this);
 		ml_menu.setAdapter(lmAdapter);
 		ml_menu.setOnItemClickListener(ml_menuListener);
+		ActUtil.getInstance().setListViewHeightBasedOnChildren(ml_menu);
 	}
 
 	// 滚动广告控件初始化
@@ -283,4 +283,11 @@ public class MainActivity extends BaseActivity implements OnRefreshListener {
 		super.onDestroy();
 		actHandler.removeCallbacks(null);
 	}
+	
+	@Override
+	protected void onPause() {
+		super.onPause();
+		AnimationToast.getInstance().destroy();
+	}
+	
 }

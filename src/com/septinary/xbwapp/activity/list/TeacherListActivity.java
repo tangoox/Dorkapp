@@ -2,9 +2,12 @@ package com.septinary.xbwapp.activity.list;
 
 import java.util.ArrayList;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Message;
+import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
@@ -21,9 +24,18 @@ import com.septinary.xbwapp.base.BitmapCache;
 import com.septinary.xbwapp.base.MyActHandler;
 import com.septinary.xbwapp.model.main.Teacher;
 import com.septinary.xbwapp.utils.ActUtil;
+import com.septinary.xbwapp.utils.AnimationToast;
+import com.septinary.xbwapp.utils.SingleRequestQueue;
+import com.septinary.xbwapp.views.BounceListView;
 import com.septinary.xbwapp.views.ScrollListView;
+import com.septinary.xbwapp.views.ViewPagerSwipeRefreshLayout;
 
-public class TeacherListActivity extends BaseActivity {
+/**
+ * @author S_ven
+ * @info 2015年4月8日15:30:37 教师列表页
+ * */
+@SuppressLint("InlinedApi")
+public class TeacherListActivity extends BaseActivity implements OnRefreshListener{
 
 	private RequestQueue mQueue;
 	private ImageLoader mImageLoader;
@@ -40,20 +52,29 @@ public class TeacherListActivity extends BaseActivity {
 		AppManager.getInstance().finishActivity(TeacherListActivity.this);
 	}
 
+	//刷新空间
+	@InjectView(R.id.lt_refreshview)
+	ViewPagerSwipeRefreshLayout lt_refreshview;
+	
 	// 老师列表
 	@InjectView(R.id.lt_teacherlist)
-	ScrollListView lt_teacherlist;
+	BounceListView lt_teacherlist;
 	// 教师列表适配器
 	TeacherListAdapter mAdapter;
 
 	@Override
 	public void init(Bundle savedInstanceState) {
 		ButterKnife.inject(this);
-		mQueue = Volley.newRequestQueue(TeacherListActivity.this);
+		mQueue = SingleRequestQueue.getRequestQueue(TeacherListActivity.this);
 		mImageLoader = new ImageLoader(mQueue, new BitmapCache());
+		lt_refreshview.setColorSchemeResources(
+				android.R.color.holo_blue_bright,
+				android.R.color.holo_green_light,
+				android.R.color.holo_orange_light,
+				android.R.color.holo_red_light);
+		lt_refreshview.setOnRefreshListener(this);
 		initTeacherlist();
 		new Thread(new Runnable() {
-			
 			@Override
 			public void run() {
 				initTeacherData();
@@ -71,7 +92,7 @@ public class TeacherListActivity extends BaseActivity {
 		mAdapter = new TeacherListAdapter(TeacherListActivity.this, teachers,
 				mImageLoader);
 		lt_teacherlist.setAdapter(mAdapter);
-		ActUtil.getInstance().setListViewHeightBasedOnChildren(lt_teacherlist);
+//		ActUtil.getInstance().setListViewHeightBasedOnChildren(lt_teacherlist);
 	}
 
 	private void initTeacherData() {
@@ -150,4 +171,22 @@ public class TeacherListActivity extends BaseActivity {
 		}
 
 	};
+
+	@Override
+	public void onRefresh() {	
+		actHandler.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				lt_refreshview.setRefreshing(false);
+				AnimationToast.getInstance().showNotify(TeacherListActivity.this,
+						"刷新完成", R.id.lt_toast);
+			}
+		}, 2000);
+	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		AnimationToast.getInstance().destroy();
+	}
 }

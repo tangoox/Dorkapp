@@ -2,6 +2,7 @@ package com.septinary.xbwapp.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.Gravity;
 
 import com.gitonway.lee.niftynotification.R;
@@ -11,6 +12,8 @@ import com.gitonway.lee.niftynotification.lib.NiftyNotificationView;
 
 public class AnimationToast {
 
+	private NiftyNotificationView view;
+	
 	private final static class AnimationToastHandler{
 		private final static AnimationToast INSTANCE = new AnimationToast();
 	}
@@ -43,15 +46,23 @@ public class AnimationToast {
 		// Gravity.CENTER,contain icon Gravity.CENTER_VERTICAL
 		 .build();
 		//
-		 NiftyNotificationView.build(act,msg, effect,res,cfg)
-		 .setIcon(R.drawable.lion) //remove this line ,only text
+		view = NiftyNotificationView.build(act,msg, effect,res,cfg);
+		view.setIcon(R.drawable.lion) //remove this line ,only text
 //		 .setOnClickListener(new View.OnClickListener() {
 		// @Override
 		// public void onClick(View view) {
 		// //add your code
 		// }
 		// })
-		 .show(); // show(boolean) allow duplicates or showSticky() sticky
+		 .show(false); // show(boolean) allow duplicates or showSticky() sticky
 		// notification,you can call removeSticky() method close it
+		Log.e("11111111111111", "show执行完成");
+	}
+	
+	public void destroy(){
+		if(view != null){
+			view.removeSticky();
+			view = null;
+		}
 	}
 }

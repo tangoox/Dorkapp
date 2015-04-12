@@ -8,22 +8,33 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp" >
+        android:layout_height="100dp"
+        android:orientation="vertical" >
 
-        <com.septinary.xbwapp.views.MyHorizontalScrollView
-            android:id="@+id/ill_horizontalScrollView"
+        <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:scrollbars="none" >
+            android:layout_height="100dp" 
+            android:scrollbars="none">
 
-            <LinearLayout
-                android:id="@+id/ill_gallery"
-                android:layout_width="120dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical"
-                android:orientation="horizontal" >
-            </LinearLayout>
-        </com.septinary.xbwapp.views.MyHorizontalScrollView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <GridView
+                        android:id="@+id/ill_gridView"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:cacheColorHint="#00000000"
+                        android:columnWidth="120dp"
+                        android:fadingEdge="none"
+                        android:listSelector="#00000000"
+                        android:numColumns="auto_fit"
+                        android:scrollbars="none"
+                        android:verticalSpacing="10dp" />
+                </LinearLayout>
+        </HorizontalScrollView>
     </LinearLayout>
 
     <RelativeLayout
@@ -60,8 +71,8 @@
 
         <View
             android:id="@+id/ill_view"
-            android:layout_width="5dp"
-            android:layout_height="5dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_alignBottom="@id/ill_img"
             android:layout_toRightOf="@id/ill_img" />
 
@@ -72,8 +83,9 @@
             android:id="@+id/ill_teacherlable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/ill_view"
+            android:layout_alignBottom="@id/ill_view"
             android:layout_toRightOf="@id/ill_img"
+            android:layout_alignLeft="@id/ill_name"
             f:horizontalSpacing="12dip"
             f:orientation="horizontal"
             f:verticalSpacing="12dip" />
@@ -81,6 +93,7 @@
         <com.septinary.xbwapp.views.FlowLayout
             xmlns:f="http://schemas.android.com/apk/res/com.septinary.xbwapp"
             android:id="@+id/ill_teacheraptitude"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"

@@ -953,22 +953,28 @@ containing a value of this type.
         public static final int abc_split_action_bar_is_narrow=0x7f090002;
     }
     public static final class color {
-        public static final int abc_search_url_text_holo=0x7f0a0009;
+        public static final int abc_search_url_text_holo=0x7f0a000b;
         public static final int abc_search_url_text_normal=0x7f0a0000;
         public static final int abc_search_url_text_pressed=0x7f0a0002;
         public static final int abc_search_url_text_selected=0x7f0a0001;
         /**  Activity底色 
          */
-        public static final int act_background=0x7f0a0008;
-        public static final int clcik_down_black=0x7f0a0004;
+        public static final int act_background=0x7f0a000a;
+        public static final int clcik_down_black=0x7f0a0006;
         /**  点击效果颜色 
          */
-        public static final int clcik_down_white=0x7f0a0003;
-        public static final int xb_click=0x7f0a0007;
+        public static final int clcik_down_white=0x7f0a0005;
+        /**  标签 
+         */
+        public static final int lable=0x7f0a0004;
+        /**  白色 
+         */
+        public static final int white=0x7f0a0003;
+        public static final int xb_click=0x7f0a0009;
         /**  学霸主色调 
          */
-        public static final int xb_color=0x7f0a0005;
-        public static final int xb_text=0x7f0a0006;
+        public static final int xb_color=0x7f0a0007;
+        public static final int xb_text=0x7f0a0008;
     }
     public static final class dimen {
         /**  Default height of an action bar. 
@@ -1206,26 +1212,30 @@ containing a value of this type.
         public static final int lion=0x7f02005f;
         public static final int lt_back=0x7f020060;
         public static final int lt_dropdown=0x7f020061;
-        public static final int main_bg=0x7f020062;
-        public static final int ml_advance=0x7f020063;
-        public static final int ml_dotted=0x7f020064;
-        public static final int ml_explain=0x7f020065;
-        public static final int ml_explain_down=0x7f020066;
-        public static final int ml_fav=0x7f020067;
-        public static final int ml_guess=0x7f020068;
-        public static final int ml_icon=0x7f020069;
-        public static final int ml_message=0x7f02006a;
-        public static final int ml_search=0x7f02006b;
-        public static final int ml_tips=0x7f02006c;
-        public static final int mr_coord=0x7f02006d;
-        public static final int mr_course=0x7f02006e;
-        public static final int mr_search=0x7f02006f;
-        public static final int mr_select_address=0x7f020070;
-        public static final int mr_slidebtn=0x7f020071;
-        public static final int mr_teacher=0x7f020072;
-        public static final int setting=0x7f020073;
-        public static final int splash=0x7f020074;
-        public static final int user_head=0x7f020075;
+        public static final int lt_lable=0x7f020062;
+        public static final int lt_lable_icon=0x7f020063;
+        public static final int ltd_tipsbg=0x7f020064;
+        public static final int main_bg=0x7f020065;
+        public static final int ml_advance=0x7f020066;
+        public static final int ml_dotted=0x7f020067;
+        public static final int ml_explain=0x7f020068;
+        public static final int ml_explain_down=0x7f020069;
+        public static final int ml_fav=0x7f02006a;
+        public static final int ml_guess=0x7f02006b;
+        public static final int ml_icon=0x7f02006c;
+        public static final int ml_message=0x7f02006d;
+        public static final int ml_search=0x7f02006e;
+        public static final int ml_tips=0x7f02006f;
+        public static final int mr_coord=0x7f020070;
+        public static final int mr_course=0x7f020071;
+        public static final int mr_search=0x7f020072;
+        public static final int mr_select_address=0x7f020073;
+        public static final int mr_slidebtn=0x7f020074;
+        public static final int mr_teacher=0x7f020075;
+        public static final int setting=0x7f020076;
+        public static final int share=0x7f020077;
+        public static final int splash=0x7f020078;
+        public static final int user_head=0x7f020079;
     }
     public static final class id {
         public static final int action_bar=0x7f08001e;
@@ -1239,7 +1249,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f080016;
         public static final int action_menu_presenter=0x7f080017;
         public static final int action_mode_close_button=0x7f080026;
-        public static final int action_settings=0x7f08007d;
+        public static final int action_settings=0x7f080082;
         public static final int activity_chooser_view_content=0x7f080027;
         public static final int always=0x7f08000b;
         public static final int beginning=0x7f080011;
@@ -1260,66 +1270,71 @@ containing a value of this type.
         public static final int icon=0x7f08002c;
         public static final int ifRoom=0x7f08000a;
         public static final int igi_img=0x7f080046;
-        public static final int ill_address=0x7f080050;
-        public static final int ill_gallery=0x7f080049;
-        public static final int ill_horizontalScrollView=0x7f080048;
-        public static final int ill_img=0x7f08004a;
+        public static final int ill_address=0x7f08004f;
+        public static final int ill_gridView=0x7f080048;
+        public static final int ill_img=0x7f080049;
         public static final int ill_layout=0x7f080047;
-        public static final int ill_name=0x7f08004b;
-        public static final int ill_range=0x7f08004c;
-        public static final int ill_teacheraptitude=0x7f08004f;
-        public static final int ill_teacherlable=0x7f08004e;
-        public static final int ill_view=0x7f08004d;
+        public static final int ill_name=0x7f08004a;
+        public static final int ill_range=0x7f08004b;
+        public static final int ill_teacheraptitude=0x7f08004e;
+        public static final int ill_teacherlable=0x7f08004d;
+        public static final int ill_view=0x7f08004c;
         public static final int image=0x7f080029;
-        public static final int iml1_course_num=0x7f080059;
-        public static final int iml1_entext=0x7f080056;
-        public static final int iml1_explain=0x7f080057;
-        public static final int iml1_img=0x7f080054;
-        public static final int iml1_teacher_num=0x7f080058;
-        public static final int iml1_title=0x7f080055;
-        public static final int iml2_course_num=0x7f08005e;
-        public static final int iml2_entext=0x7f08005b;
-        public static final int iml2_explain=0x7f08005c;
-        public static final int iml2_img=0x7f08005f;
-        public static final int iml2_teacher_num=0x7f08005d;
-        public static final int iml2_title=0x7f08005a;
-        public static final int imlm_icon=0x7f080051;
-        public static final int imlm_text=0x7f080052;
-        public static final int imlm_tips=0x7f080053;
+        public static final int iml1_course_num=0x7f080058;
+        public static final int iml1_entext=0x7f080055;
+        public static final int iml1_explain=0x7f080056;
+        public static final int iml1_img=0x7f080053;
+        public static final int iml1_teacher_num=0x7f080057;
+        public static final int iml1_title=0x7f080054;
+        public static final int iml2_course_num=0x7f08005d;
+        public static final int iml2_entext=0x7f08005a;
+        public static final int iml2_explain=0x7f08005b;
+        public static final int iml2_img=0x7f08005e;
+        public static final int iml2_teacher_num=0x7f08005c;
+        public static final int iml2_title=0x7f080059;
+        public static final int imlm_icon=0x7f080050;
+        public static final int imlm_text=0x7f080051;
+        public static final int imlm_tips=0x7f080052;
         public static final int jelly=0x7f080040;
         public static final int listMode=0x7f080001;
         public static final int list_item=0x7f08002b;
-        public static final int lt_address=0x7f080063;
-        public static final int lt_back=0x7f080062;
-        public static final int lt_classification=0x7f080067;
-        public static final int lt_coord=0x7f080064;
-        public static final int lt_refreshview=0x7f08006a;
-        public static final int lt_search=0x7f080065;
-        public static final int lt_sort=0x7f080066;
-        public static final int lt_sorting=0x7f080068;
-        public static final int lt_teacherlist=0x7f08006b;
-        public static final int lt_toast=0x7f080069;
-        public static final int lt_top=0x7f080061;
+        public static final int lt_address=0x7f080068;
+        public static final int lt_back=0x7f080067;
+        public static final int lt_classification=0x7f08006c;
+        public static final int lt_coord=0x7f080069;
+        public static final int lt_refreshview=0x7f08006f;
+        public static final int lt_search=0x7f08006a;
+        public static final int lt_sort=0x7f08006b;
+        public static final int lt_sorting=0x7f08006d;
+        public static final int lt_teacherlist=0x7f080070;
+        public static final int lt_toast=0x7f08006e;
+        public static final int lt_top=0x7f080066;
+        public static final int ltd_back=0x7f080061;
+        public static final int ltd_imgs=0x7f080063;
+        public static final int ltd_imgtips=0x7f080065;
+        public static final int ltd_share=0x7f080062;
+        public static final int ltd_top=0x7f080060;
+        public static final int ltd_viewpager=0x7f080064;
         public static final int mLyout=0x7f080045;
-        public static final int main_reside=0x7f080060;
+        public static final int main_reside=0x7f08005f;
         public static final int middle=0x7f080012;
-        public static final int ml_bottom=0x7f08007a;
-        public static final int ml_cut=0x7f08007c;
-        public static final int ml_explain=0x7f080078;
-        public static final int ml_imgicons=0x7f080077;
-        public static final int ml_menu=0x7f080079;
-        public static final int ml_setting=0x7f08007b;
-        public static final int ml_top=0x7f080076;
-        public static final int mr_address=0x7f08006e;
-        public static final int mr_classlist=0x7f080074;
-        public static final int mr_coord=0x7f08006f;
-        public static final int mr_makelike=0x7f080075;
-        public static final int mr_refreshview=0x7f080073;
-        public static final int mr_rollad=0x7f080071;
-        public static final int mr_search=0x7f080070;
-        public static final int mr_slidebtn=0x7f08006d;
-        public static final int mr_toast=0x7f080072;
-        public static final int mr_top=0x7f08006c;
+        public static final int ml_bottom=0x7f08007f;
+        public static final int ml_cut=0x7f080081;
+        public static final int ml_explain=0x7f08007d;
+        public static final int ml_imgicons=0x7f08007c;
+        public static final int ml_menu=0x7f08007e;
+        public static final int ml_setting=0x7f080080;
+        public static final int ml_top=0x7f08007b;
+        public static final int mr_address=0x7f080073;
+        public static final int mr_classlist=0x7f080078;
+        public static final int mr_coord=0x7f080074;
+        public static final int mr_makelike=0x7f080079;
+        public static final int mr_refreshview=0x7f080076;
+        public static final int mr_rollad=0x7f080077;
+        public static final int mr_search=0x7f080075;
+        public static final int mr_slidebtn=0x7f080072;
+        public static final int mr_toast=0x7f08007a;
+        public static final int mr_top=0x7f080071;
         public static final int never=0x7f080009;
         public static final int none=0x7f080010;
         public static final int normal=0x7f080000;
@@ -1415,10 +1430,11 @@ containing a value of this type.
         public static final int item_mr_listitem2=0x7f03001f;
         public static final int layout_main=0x7f030020;
         public static final int layout_splash=0x7f030021;
-        public static final int layout_teacherlist=0x7f030022;
-        public static final int main_right=0x7f030023;
-        public static final int mian_left=0x7f030024;
-        public static final int support_simple_spinner_dropdown_item=0x7f030025;
+        public static final int layout_teacherdetails=0x7f030022;
+        public static final int layout_teacherlist=0x7f030023;
+        public static final int main_right=0x7f030024;
+        public static final int mian_left=0x7f030025;
+        public static final int support_simple_spinner_dropdown_item=0x7f030026;
     }
     public static final class menu {
         public static final int layout_main=0x7f0c0000;
@@ -1469,6 +1485,9 @@ containing a value of this type.
         public static final int app_name=0x7f060000;
         public static final int hello_world=0x7f060001;
         public static final int logout_tips=0x7f060010;
+        /**  教师详情 
+         */
+        public static final int ltd_title=0x7f060013;
         public static final int ml_explain=0x7f060012;
         /**  首页左菜单 
          */

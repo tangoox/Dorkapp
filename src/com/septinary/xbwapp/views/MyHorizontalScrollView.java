@@ -105,11 +105,6 @@ public class MyHorizontalScrollView extends HorizontalScrollView implements
 		mContainer = (LinearLayout) getChildAt(0);
 	}
 
-	@Override
-	protected void onLayout(boolean changed, int l, int t, int r, int b) {
-		super.onLayout(changed, l, t, r, b);
-	}
-	
 	/**
 	 * 加载下一张图片
 	 */

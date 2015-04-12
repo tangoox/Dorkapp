@@ -9,4 +9,7 @@
     <!-- 首页左菜单 -->
     <string name="ml_login">点击登录</string>
     <string name="ml_explain">个性签名</string>
+    
+    <!-- 教师详情 -->
+    <string name="ltd_title">教师详情</string>
 </resources>

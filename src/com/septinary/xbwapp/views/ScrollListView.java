@@ -6,6 +6,8 @@ import android.widget.ListView;
 
 public class ScrollListView extends ListView {
 
+	public boolean isonMeasure = false;
+	
 	ScrollListView(Context context) {
 		super(context);
 	}
@@ -23,9 +25,15 @@ public class ScrollListView extends ListView {
 	 * 重写该方法，达到使ListView适应ScrollView的效果
 	 */
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		isonMeasure = true;
 		int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2,
 				MeasureSpec.AT_MOST);
 		super.onMeasure(widthMeasureSpec, expandSpec);
 	}
 
+	@Override
+	protected void onLayout(boolean changed, int l, int t, int r, int b) {
+		isonMeasure = false;
+		super.onLayout(changed, l, t, r, b);
+	}
 }

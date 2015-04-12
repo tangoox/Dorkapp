@@ -10,9 +10,7 @@ public class CustomToast {
 		private final static CustomToast INSTANCE = new CustomToast();
 	}
 
-	public CustomToast() {
-
-	}
+	private CustomToast() {}
 
 	public static CustomToast getInstance() {
 		return CustomToastHandler.INSTANCE;

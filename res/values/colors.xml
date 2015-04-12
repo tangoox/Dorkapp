@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- 白色 -->
+    <color name="white">#ffffff</color>
+    <!-- 标签 -->
+    <color name="lable">#E5B803</color>
     <!-- 点击效果颜色 -->
     <color name="clcik_down_white">#3fffffff</color>
     <color name="clcik_down_black">#3f000000</color>
