@@ -2,6 +2,8 @@
 <resources>
     <!-- 白色 -->
     <color name="white">#ffffff</color>
+    <!-- 灰色 -->
+    <color name="gray">#CCCCCC</color>
     <!-- 标签 -->
     <color name="lable">#E5B803</color>
     <!-- 点击效果颜色 -->

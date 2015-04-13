@@ -120,10 +120,8 @@
             android:id="@+id/lt_teacherlist"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/white" 
-            android:scrollbars="none"
-            android:overScrollMode="always"/>
-        
+            android:background="@android:color/white"
+            android:scrollbars="none" />
     </com.septinary.xbwapp.views.ViewPagerSwipeRefreshLayout>
 
 </RelativeLayout>

@@ -55,8 +55,8 @@
                 android:id="@+id/ltd_viewpager"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
-            
-            <TextView 
+
+            <TextView
                 android:id="@+id/ltd_imgtips"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -64,8 +64,62 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/ltd_tipsbg"
                 android:gravity="center"
-                android:text="1/5"/>
+                android:text="1/5" />
         </FrameLayout>
     </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ltd_tracherinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/ltd_headimg"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="10dp" />
+
+            <TextView
+                android:id="@+id/ltd_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/ltd_headimg"
+                android:layout_toRightOf="@id/ltd_headimg"
+                android:text="保健哥"
+                android:textSize="@dimen/size2" />
+
+            <com.septinary.xbwapp.views.FlowLayout
+                xmlns:f="http://schemas.android.com/apk/res/com.septinary.xbwapp"
+                android:id="@+id/ltd_lable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/ltd_headimg"
+                android:layout_alignLeft="@id/ltd_name"
+                android:layout_toRightOf="@id/ltd_headimg"
+                f:horizontalSpacing="12dip"
+                f:orientation="horizontal"
+                f:verticalSpacing="12dip" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/dash" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+        </RelativeLayout>
+    </LinearLayout>
 
 </LinearLayout>

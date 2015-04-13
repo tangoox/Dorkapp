@@ -49,7 +49,7 @@ public class BounceListView extends ListView {
 
 		// this.setOverScrollMode(View.OVER_SCROLL_ALWAYS);
 
-		try {
+		/*try {
 			Class<?> c = (Class<?>) Class.forName(AbsListView.class.getName());
 			Field egtField = c.getDeclaredField("mEdgeGlowTop");
 			Field egbBottom = c.getDeclaredField("mEdgeGlowBottom");
@@ -73,7 +73,7 @@ public class BounceListView extends ListView {
 			mEdge.set(egbObject, new ColorDrawable(Color.TRANSPARENT));
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}*/
 	}
 
 	@SuppressLint("NewApi")

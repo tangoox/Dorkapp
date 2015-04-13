@@ -6,6 +6,9 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import butterknife.ButterKnife;
@@ -14,8 +17,8 @@ import butterknife.OnClick;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.Volley;
 import com.septinary.xbwapp.R;
+import com.septinary.xbwapp.activity.details.TeacherDetailsActivity;
 import com.septinary.xbwapp.activity.main.MainActivity;
 import com.septinary.xbwapp.adapter.list.TeacherListAdapter;
 import com.septinary.xbwapp.base.AppManager;
@@ -25,9 +28,9 @@ import com.septinary.xbwapp.base.MyActHandler;
 import com.septinary.xbwapp.model.main.Teacher;
 import com.septinary.xbwapp.utils.ActUtil;
 import com.septinary.xbwapp.utils.AnimationToast;
+import com.septinary.xbwapp.utils.CustomToast;
 import com.septinary.xbwapp.utils.SingleRequestQueue;
 import com.septinary.xbwapp.views.BounceListView;
-import com.septinary.xbwapp.views.ScrollListView;
 import com.septinary.xbwapp.views.ViewPagerSwipeRefreshLayout;
 
 /**
@@ -91,9 +94,21 @@ public class TeacherListActivity extends BaseActivity implements OnRefreshListen
 	private void initTeacherlist() {
 		mAdapter = new TeacherListAdapter(TeacherListActivity.this, teachers,
 				mImageLoader);
+		lt_teacherlist.setOnItemClickListener(lt_teacherListener);
 		lt_teacherlist.setAdapter(mAdapter);
 //		ActUtil.getInstance().setListViewHeightBasedOnChildren(lt_teacherlist);
 	}
+	
+	
+	OnItemClickListener lt_teacherListener = new OnItemClickListener() {
+
+		@Override
+		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+				long arg3) {
+			CustomToast.getInstance().showToast(TeacherListActivity.this, "asdasd");
+			ActUtil.getInstance().MoveToNewAct(TeacherListActivity.this, TeacherDetailsActivity.class);
+		}
+	};
 
 	private void initTeacherData() {
 		teachers.clear();
@@ -189,4 +204,5 @@ public class TeacherListActivity extends BaseActivity implements OnRefreshListen
 		super.onDestroy();
 		AnimationToast.getInstance().destroy();
 	}
+
 }
