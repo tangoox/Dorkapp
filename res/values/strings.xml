@@ -10,6 +10,21 @@
     <string name="ml_login">点击登录</string>
     <string name="ml_explain">个性签名</string>
     
-    <!-- 教师详情 -->
+    <!-- 教师详情 --> 
     <string name="ltd_title">教师详情</string>
+    <string name="ltd_imgtips">0/0</string>
+    <string name="ltd_collection">&#160;收藏</string>
+    <string name="ltd_judge_score_text">评价分数：</string>
+    <string name="ltd_judge_score">0.0</string>
+    <string name="ltd_teachersaay_text">教师自述：</string>
+    <string name="ltd_teachersaay">士大夫士大夫士大夫士大夫士大夫</string>
+    <string name="ltd_more">&gt;</string>
+    <string name="ltd_course">课程套餐</string>
+    <string name="ici_audition">&#160;试听</string>
+    <string name="ltd_record">教师履历</string>
+    <string name="ltd_address">地址：暂无</string>
+    <string name="ltd_judge">评&#160;论</string>
+    <string name="ltd_showmore">查看更多</string>
+    <string name="ltd_xb_auth">学霸认证</string>
+    <string name="ltd_interest">你可能感兴趣</string>
 </resources>

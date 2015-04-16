@@ -1,8 +1,12 @@
 package com.septinary.xbwapp.model.main;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Teacher {
+public class Teacher implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
 	// 教师姓名
 	private String teacher_name;
 	// 教师头像

@@ -8,12 +8,12 @@ import butterknife.ButterKnife.Injector;
 public class TeacherListActivity$$ViewInjector<T extends com.septinary.xbwapp.activity.list.TeacherListActivity> implements Injector<T> {
   @Override public void inject(final Finder finder, final T target, Object source) {
     View view;
-    view = finder.findRequiredView(source, 2131230836, "field 'lt_teacherlist'");
-    target.lt_teacherlist = finder.castView(view, 2131230836, "field 'lt_teacherlist'");
-    view = finder.findRequiredView(source, 2131230835, "field 'lt_refreshview'");
-    target.lt_refreshview = finder.castView(view, 2131230835, "field 'lt_refreshview'");
-    view = finder.findRequiredView(source, 2131230827, "field 'lt_back' and method 'lt_back'");
-    target.lt_back = finder.castView(view, 2131230827, "field 'lt_back'");
+    view = finder.findRequiredView(source, 2131230869, "field 'lt_teacherlist'");
+    target.lt_teacherlist = finder.castView(view, 2131230869, "field 'lt_teacherlist'");
+    view = finder.findRequiredView(source, 2131230868, "field 'lt_refreshview'");
+    target.lt_refreshview = finder.castView(view, 2131230868, "field 'lt_refreshview'");
+    view = finder.findRequiredView(source, 2131230860, "field 'lt_back' and method 'lt_back'");
+    target.lt_back = finder.castView(view, 2131230860, "field 'lt_back'");
     view.setOnClickListener(
       new butterknife.internal.DebouncingOnClickListener() {
         @Override public void doClick(

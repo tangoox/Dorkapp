@@ -18,7 +18,6 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.septinary.xbwapp.R;
@@ -28,13 +27,13 @@ import com.septinary.xbwapp.adapter.main.MainCategoryAdapter;
 import com.septinary.xbwapp.adapter.main.MainViewPagerAdapter;
 import com.septinary.xbwapp.base.AppManager;
 import com.septinary.xbwapp.base.BaseActivity;
-import com.septinary.xbwapp.base.BitmapCache;
 import com.septinary.xbwapp.base.MyActHandler;
 import com.septinary.xbwapp.model.main.Category;
 import com.septinary.xbwapp.utils.ActUtil;
 import com.septinary.xbwapp.utils.AnimationToast;
 import com.septinary.xbwapp.utils.CustomToast;
-import com.septinary.xbwapp.utils.SingleRequestQueue;
+import com.septinary.xbwapp.utils.MyPreferences;
+import com.septinary.xbwapp.utils.SingleImageLoader;
 import com.septinary.xbwapp.views.ResideLayout;
 
 /**
@@ -50,7 +49,7 @@ public class MainActivity extends BaseActivity implements OnRefreshListener {
 
 	// 网络请求数据工具
 	private ImageLoader mImageLoader;
-	private RequestQueue mQueue;
+	private MyPreferences myPreferences;
 
 	// 定义菜单描述与菜单图标
 	private String[] stu_menu = { "寻求名师", "猜你喜欢", "兴趣标签", "我的预约", "我的消息" };
@@ -137,8 +136,10 @@ public class MainActivity extends BaseActivity implements OnRefreshListener {
 	@Override
 	public void init(Bundle savedInstanceState) {
 		ButterKnife.inject(this);
-		mQueue = SingleRequestQueue.getRequestQueue(MainActivity.this);
-		mImageLoader = new ImageLoader(mQueue, new BitmapCache());
+		mImageLoader = SingleImageLoader.getImageLoader(MainActivity.this);
+		myPreferences = MyPreferences.getInstance();
+		myPreferences.init(MainActivity.this.getApplicationContext());
+		myPreferences.clearAll();
 		mr_refreshview.setColorSchemeResources(
 				android.R.color.holo_blue_bright,
 				android.R.color.holo_green_light,
@@ -150,7 +151,12 @@ public class MainActivity extends BaseActivity implements OnRefreshListener {
 		// 初始化滚动广告控件
 		initViewpager();
 		// 初始化广告图片数据
-		initImgs();
+		new Thread(){
+			@Override
+			public void run() {
+				initImgs();
+			};
+		}.start();
 		// 初始化分类列表
 		initCategotyList();
 		// 初始化分类列表数据
@@ -229,7 +235,6 @@ public class MainActivity extends BaseActivity implements OnRefreshListener {
 		@Override
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
-
 		}
 	};
 
@@ -287,7 +292,6 @@ public class MainActivity extends BaseActivity implements OnRefreshListener {
 	@Override
 	protected void onPause() {
 		super.onPause();
-		AnimationToast.getInstance().destroy();
 	}
 	
 }

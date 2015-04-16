@@ -73,7 +73,7 @@
         <View
             android:id="@+id/ill_view"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="18dp"
             android:layout_alignBottom="@id/ill_img"
             android:layout_toRightOf="@id/ill_img" />
 
@@ -84,7 +84,7 @@
             android:id="@+id/ill_teacherlable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/ill_view"
+            android:layout_alignTop="@id/ill_view"
             android:layout_toRightOf="@id/ill_img"
             android:layout_alignLeft="@id/ill_name"
             f:horizontalSpacing="12dip"

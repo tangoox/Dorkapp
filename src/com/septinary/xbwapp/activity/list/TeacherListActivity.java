@@ -1,5 +1,6 @@
 package com.septinary.xbwapp.activity.list;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import android.annotation.SuppressLint;
@@ -10,12 +11,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageButton;
-import android.widget.ListView;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.septinary.xbwapp.R;
 import com.septinary.xbwapp.activity.details.TeacherDetailsActivity;
@@ -23,13 +22,11 @@ import com.septinary.xbwapp.activity.main.MainActivity;
 import com.septinary.xbwapp.adapter.list.TeacherListAdapter;
 import com.septinary.xbwapp.base.AppManager;
 import com.septinary.xbwapp.base.BaseActivity;
-import com.septinary.xbwapp.base.BitmapCache;
 import com.septinary.xbwapp.base.MyActHandler;
 import com.septinary.xbwapp.model.main.Teacher;
 import com.septinary.xbwapp.utils.ActUtil;
 import com.septinary.xbwapp.utils.AnimationToast;
-import com.septinary.xbwapp.utils.CustomToast;
-import com.septinary.xbwapp.utils.SingleRequestQueue;
+import com.septinary.xbwapp.utils.SingleImageLoader;
 import com.septinary.xbwapp.views.BounceListView;
 import com.septinary.xbwapp.views.ViewPagerSwipeRefreshLayout;
 
@@ -38,9 +35,9 @@ import com.septinary.xbwapp.views.ViewPagerSwipeRefreshLayout;
  * @info 2015年4月8日15:30:37 教师列表页
  * */
 @SuppressLint("InlinedApi")
-public class TeacherListActivity extends BaseActivity implements OnRefreshListener{
+public class TeacherListActivity extends BaseActivity implements
+		OnRefreshListener {
 
-	private RequestQueue mQueue;
 	private ImageLoader mImageLoader;
 	private ArrayList<Teacher> teachers = new ArrayList<Teacher>();
 
@@ -55,10 +52,10 @@ public class TeacherListActivity extends BaseActivity implements OnRefreshListen
 		AppManager.getInstance().finishActivity(TeacherListActivity.this);
 	}
 
-	//刷新空间
+	// 刷新空间
 	@InjectView(R.id.lt_refreshview)
 	ViewPagerSwipeRefreshLayout lt_refreshview;
-	
+
 	// 老师列表
 	@InjectView(R.id.lt_teacherlist)
 	BounceListView lt_teacherlist;
@@ -68,8 +65,8 @@ public class TeacherListActivity extends BaseActivity implements OnRefreshListen
 	@Override
 	public void init(Bundle savedInstanceState) {
 		ButterKnife.inject(this);
-		mQueue = SingleRequestQueue.getRequestQueue(TeacherListActivity.this);
-		mImageLoader = new ImageLoader(mQueue, new BitmapCache());
+		mImageLoader = SingleImageLoader
+				.getImageLoader(TeacherListActivity.this);
 		lt_refreshview.setColorSchemeResources(
 				android.R.color.holo_blue_bright,
 				android.R.color.holo_green_light,
@@ -83,7 +80,7 @@ public class TeacherListActivity extends BaseActivity implements OnRefreshListen
 				initTeacherData();
 			}
 		}).start();
-		
+
 	}
 
 	@Override
@@ -96,17 +93,17 @@ public class TeacherListActivity extends BaseActivity implements OnRefreshListen
 				mImageLoader);
 		lt_teacherlist.setOnItemClickListener(lt_teacherListener);
 		lt_teacherlist.setAdapter(mAdapter);
-//		ActUtil.getInstance().setListViewHeightBasedOnChildren(lt_teacherlist);
+		// ActUtil.getInstance().setListViewHeightBasedOnChildren(lt_teacherlist);
 	}
-	
-	
+
+	//进入教师详情页
 	OnItemClickListener lt_teacherListener = new OnItemClickListener() {
 
 		@Override
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
-			CustomToast.getInstance().showToast(TeacherListActivity.this, "asdasd");
-			ActUtil.getInstance().MoveToNewAct(TeacherListActivity.this, TeacherDetailsActivity.class);
+			ActUtil.getInstance().MoveToNewAct(TeacherListActivity.this,
+					TeacherDetailsActivity.class,"teacher",teachers.get(arg2));
 		}
 	};
 
@@ -179,8 +176,8 @@ public class TeacherListActivity extends BaseActivity implements OnRefreshListen
 			switch (msg.what) {
 			case 1:
 				mAdapter.notifyDataSetChanged();
-//				ActUtil.getInstance().setListViewHeightBasedOnChildren(
-//						lt_teacherlist);
+				// ActUtil.getInstance().setListViewHeightBasedOnChildren(
+				// lt_teacherlist);
 				break;
 			}
 		}
@@ -188,21 +185,20 @@ public class TeacherListActivity extends BaseActivity implements OnRefreshListen
 	};
 
 	@Override
-	public void onRefresh() {	
+	public void onRefresh() {
 		actHandler.postDelayed(new Runnable() {
 			@Override
 			public void run() {
 				lt_refreshview.setRefreshing(false);
-				AnimationToast.getInstance().showNotify(TeacherListActivity.this,
-						"刷新完成", R.id.lt_toast);
+				AnimationToast.getInstance().showNotify(
+						TeacherListActivity.this, "刷新完成", R.id.lt_toast);
 			}
 		}, 2000);
 	}
-	
+
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		AnimationToast.getInstance().destroy();
 	}
 
 }

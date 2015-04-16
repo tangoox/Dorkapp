@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -10,6 +10,8 @@
         android:id="@+id/ltd_top"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:background="@color/xb_color" >
 
         <ImageButton
@@ -19,6 +21,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:background="@android:color/transparent"
+            android:contentDescription="@null"
             android:padding="10dp"
             android:src="@drawable/lt_back" />
 
@@ -38,88 +41,425 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="20dp"
-            android:background="@drawable/share" />
+            android:background="@drawable/share"
+            android:contentDescription="@null" />
     </RelativeLayout>
     <!-- top end -->
 
-    <RelativeLayout
-        android:id="@+id/ltd_imgs"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="200dp" >
+        android:layout_height="match_parent"
+        android:layout_below="@id/ltd_top"
+        android:scrollbars="none" >
 
-        <FrameLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="wrap_content"
+            android:background="@color/act_background"
+            android:orientation="vertical" >
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/ltd_viewpager"
+            <!-- 轮换图片 start -->
+
+            <FrameLayout
+                android:id="@+id/ltd_imgs"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="200dp" >
 
-            <TextView
-                android:id="@+id/ltd_imgtips"
-                android:layout_width="wrap_content"
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/ltd_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/ltd_imgtips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/ltd_tipsbg"
+                    android:gravity="center"
+                    android:text="@string/ltd_imgtips" />
+            </FrameLayout>
+            <!-- 轮换图片 end -->
+
+
+            <!-- 教师信息 start -->
+
+            <LinearLayout
+                android:id="@+id/ltd_tracherinfo"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center_horizontal"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/ltd_tipsbg"
-                android:gravity="center"
-                android:text="1/5" />
-        </FrameLayout>
-    </RelativeLayout>
+                android:background="@android:color/white"
+                android:orientation="vertical" >
 
-    <LinearLayout
-        android:id="@+id/ltd_tracherinfo"
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" >
+
+                    <com.android.volley.toolbox.NetworkImageView
+                        android:id="@+id/ltd_headimg"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="10dp" />
+
+                    <TextView
+                        android:id="@+id/ltd_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/ltd_headimg"
+                        android:layout_toRightOf="@id/ltd_headimg"
+                        android:textSize="@dimen/size2" />
+
+                    <TextView
+                        android:id="@+id/ltd_collection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@id/ltd_name"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/btn_bg"
+                        android:clickable="true"
+                        android:drawableLeft="@drawable/ltd_collection"
+                        android:paddingBottom="3dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="3dp"
+                        android:text="@string/ltd_collection"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/size2" />
+
+                    <View
+                        android:id="@+id/ltd_view"
+                        android:layout_width="0dp"
+                        android:layout_height="18dp"
+                        android:layout_alignBottom="@id/ltd_headimg"
+                        android:layout_toRightOf="@id/ltd_headimg" />
+
+                    <com.septinary.xbwapp.views.FlowLayout
+                        xmlns:f="http://schemas.android.com/apk/res/com.septinary.xbwapp"
+                        android:id="@+id/ltd_lable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/ltd_name"
+                        android:layout_alignTop="@id/ltd_view"
+                        android:layout_toRightOf="@id/ltd_headimg"
+                        f:horizontalSpacing="12dip"
+                        f:orientation="horizontal"
+                        f:verticalSpacing="12dip" />
+
+                    <com.septinary.xbwapp.views.FlowLayout
+                        xmlns:f="http://schemas.android.com/apk/res/com.septinary.xbwapp"
+                        android:id="@+id/ltd_teacheraptitude"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/ltd_headimg"
+                        android:layout_below="@id/ltd_lable"
+                        android:layout_marginTop="10dp"
+                        f:horizontalSpacing="12dip"
+                        f:orientation="horizontal"
+                        f:verticalSpacing="12dip" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/dash" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="@string/ltd_judge_score_text"
+                            android:textSize="@dimen/size2" />
+
+                        <ProgressBar
+                            android:id="@+id/ltd_judge"
+                            style="@style/ProgressBar_Mini"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:progress="50" />
+
+                        <TextView
+                            android:id="@+id/ltd_judge_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/ltd_judge_score"
+                            android:textColor="@color/xb_text"
+                            android:textSize="@dimen/size2" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/ltd_teachersay_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="@string/ltd_teachersaay_text"
+                            android:textSize="@dimen/size2" />
+
+                        <TextView
+                            android:id="@+id/ltd_teachersay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/ltd_teachersay_text"
+                            android:layout_toLeftOf="@+id/ltd_click"
+                            android:layout_toRightOf="@id/ltd_teachersay_text"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:textColor="@color/gray_text"
+                            android:textSize="@dimen/size2" />
+
+                        <TextView
+                            android:id="@id/ltd_click"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:text="@string/ltd_more"
+                            android:textColor="@color/xb_color" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 教师信息 end -->
+
+
+            <!-- 课程套餐 start -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/ltd_course"
+                    android:textSize="@dimen/size2" />
+
+                <ListView
+                    android:id="@+id/ltd_course"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:divider="@color/white"
+                    android:dividerHeight="0dp"
+                    android:listSelector="@android:color/transparent" />
+            </LinearLayout>
+            <!-- 课程套餐 end -->
+
+
+            <!-- 教师履历 start -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="2"
+                    android:background="@color/white"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/ltd_record"
+                        android:textSize="@dimen/size2" />
+
+                    <ListView
+                        android:id="@+id/ltd_record"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:divider="@color/white"
+                        android:dividerHeight="0dp"
+                        android:listSelector="@android:color/transparent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/address"
+                        android:contentDescription="@null" />
+
+                    <TextView
+                        android:id="@+id/ltd_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:lines="2"
+                        android:padding="5dp"
+                        android:text="@string/ltd_address"
+                        android:textSize="@dimen/size5" />
+                </LinearLayout>
+            </LinearLayout>
+            <!-- 教师履历 end -->
+
+
+            <!-- 评论 start -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/ltd_judge"
+                    android:textSize="@dimen/size2" />
+
+                <ListView
+                    android:id="@+id/ltd_judges"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:divider="@color/white"
+                    android:dividerHeight="0dp"
+                    android:listSelector="@android:color/transparent" />
+
+                <LinearLayout
+                    android:id="@+id/ltd_showmore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@drawable/dash" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableLeft="@drawable/ltd_more"
+                        android:padding="10dp"
+                        android:text="@string/ltd_showmore"
+                        android:textColor="@color/gray_text"
+                        android:textSize="@dimen/size2" />
+                </LinearLayout>
+            </LinearLayout>
+            <!-- 评论 end -->
+
+
+            <!-- 学霸认证 start -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/ltd_xb_auth"
+                    android:textSize="@dimen/size2" />
+
+                <com.septinary.xbwapp.views.FlowLayout
+                    xmlns:f="http://schemas.android.com/apk/res/com.septinary.xbwapp"
+                    android:id="@+id/ltd_xb_auth"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    f:horizontalSpacing="12dip"
+                    f:orientation="horizontal"
+                    f:verticalSpacing="12dip" />
+            </LinearLayout>
+            <!-- 学霸认证 end -->
+
+
+            <!-- 兴趣推荐 start -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/ltd_interest"
+                    android:textSize="@dimen/size2" />
+
+                <ListView
+                    android:id="@+id/ltd_interest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@color/white"
+                    android:dividerHeight="0dp"
+                    android:listSelector="@android:color/transparent" />
+            </LinearLayout>
+            <!-- 兴趣推荐 end -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/ltd_toast"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:orientation="vertical" >
+        android:layout_below="@id/ltd_top" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" >
-
-            <com.android.volley.toolbox.NetworkImageView
-                android:id="@+id/ltd_headimg"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_margin="10dp" />
-
-            <TextView
-                android:id="@+id/ltd_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@id/ltd_headimg"
-                android:layout_toRightOf="@id/ltd_headimg"
-                android:text="保健哥"
-                android:textSize="@dimen/size2" />
-
-            <com.septinary.xbwapp.views.FlowLayout
-                xmlns:f="http://schemas.android.com/apk/res/com.septinary.xbwapp"
-                android:id="@+id/ltd_lable"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/ltd_headimg"
-                android:layout_alignLeft="@id/ltd_name"
-                android:layout_toRightOf="@id/ltd_headimg"
-                f:horizontalSpacing="12dip"
-                f:orientation="horizontal"
-                f:verticalSpacing="12dip" />
-        </RelativeLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@drawable/dash" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" >
-        </RelativeLayout>
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

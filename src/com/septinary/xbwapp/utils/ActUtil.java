@@ -3,6 +3,7 @@ package com.septinary.xbwapp.utils;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -91,6 +92,15 @@ public class ActUtil {
 		intent.putExtras(bundle);
 		mcontext.startActivity(intent);
 
+	}
+	
+	public void MoveToNewAct(Context context,Class<?> cls,String key,Object obj){
+		Intent intent = new Intent(context, cls);
+		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		Bundle bundle = new Bundle();
+		bundle.putSerializable(key, (Serializable) obj);
+		intent.putExtras(bundle);
+		context.startActivity(intent);
 	}
 
 	/**

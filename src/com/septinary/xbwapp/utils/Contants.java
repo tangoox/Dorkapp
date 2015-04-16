@@ -23,4 +23,12 @@ public class Contants {
 	 * MyPreferences配置
 	 * */
 	public final static String WELCOME = "welcome";
+	public final static String TOKEN = "token";
+	public final static String UID = "uid";
+	public final static String UNAME = "uname";
+	public final static String SEX = "sex";
+	public final static String UPWD = "upwd";
+	public final static String UPHONE = "uphone";
+	public final static String NICKNAME = "nickname";
+	public final static String MPKEY = android.os.Build.MODEL;
 }

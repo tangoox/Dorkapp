@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/iri_line"
+            android:layout_width="1dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="4dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/gray" />
+        
+        <ImageView
+            android:id="@+id/iri_point"
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:layout_below="@+id/iri_line"
+            android:background="@drawable/point_gray"
+            android:contentDescription="@null"/>
+        
+        <TextView
+            android:id="@+id/iri_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iri_point"
+            android:layout_margin="6dp"
+            android:textSize="@dimen/size5" />
+
+        <TextView 
+            android:id="@+id/iri_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size5"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/iri_time"/>
+        
+        <View
+            android:layout_width="1dp"
+            android:layout_height="15dp"
+            android:layout_below="@+id/iri_point"
+            android:layout_marginLeft="4dp"
+            android:background="@color/gray" />
+		
+    </RelativeLayout>
+
+</LinearLayout>

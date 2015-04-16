@@ -14,6 +14,8 @@ import android.widget.ImageButton;
  * */
 public class StuMenuFirstFragment extends BaseFragment{
 
+	
+	
 	@Override
 	public int getLayout() {
 		return R.layout.fragment_mr_stu_first;

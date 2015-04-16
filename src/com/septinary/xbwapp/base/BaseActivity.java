@@ -1,5 +1,7 @@
 package com.septinary.xbwapp.base;
 
+import com.septinary.xbwapp.utils.AnimationToast;
+
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -48,6 +50,7 @@ public abstract class BaseActivity extends FragmentActivity {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
+		AnimationToast.getInstance().destroy();
 		AppManager.getInstance().finishActivity(this);
 	}
 
@@ -59,5 +62,6 @@ public abstract class BaseActivity extends FragmentActivity {
 	@Override
 	protected void onPause() {
 		super.onPause();
+		AnimationToast.getInstance().destroy();
 	}
 }
