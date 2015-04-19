@@ -4,4 +4,55 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <com.septinary.xbwapp.views.ViewPagerSwipeRefreshLayout
+        android:id="@+id/fmsf_refreshview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.septinary.xbwapp.views.ViewPagerScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <!-- 滚动广告 -->
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/fmsf_rollad"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true" />
+
+                <!-- 分类列表 -->
+
+                <ListView
+                    android:id="@+id/fmsf_classlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white" />
+				<!-- 
+                <TextView
+                    android:id="@+id/fmsf_makelike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/click_xbbtn"
+                    android:clickable="true"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
+                    android:text="定制我的喜好"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/size3" />
+                -->
+            </LinearLayout>
+        </com.septinary.xbwapp.views.ViewPagerScrollView>
+    </com.septinary.xbwapp.views.ViewPagerSwipeRefreshLayout>
+
 </LinearLayout>

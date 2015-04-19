@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ml_tea_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- stumenu 1 -->
+
+    <RelativeLayout
+        android:id="@+id/ml_tea_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/ml_t1_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ml_search"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/ml_t1_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/ml_t1_img"
+            android:text="@string/ml_teamenu_1"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/ml_icon"
+            android:contentDescription="@null" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@id/ml_t1_text"
+            android:background="@drawable/ml_dotted" />
+    </RelativeLayout>
+
+    <!-- stumenu 2 -->
+
+    <RelativeLayout
+        android:id="@+id/ml_tea_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/ml_t2_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ml_fav"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/ml_t2_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/ml_t2_img"
+            android:text="@string/ml_teamenu_2"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/ml_icon"
+            android:contentDescription="@null" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@id/ml_t2_text"
+            android:background="@drawable/ml_dotted" />
+    </RelativeLayout>
+
+    <!-- stumenu 3 -->
+
+    <RelativeLayout
+        android:id="@+id/ml_tea_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/ml_t3_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ml_guess"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/ml_t3_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/ml_t3_img"
+            android:text="@string/ml_teamenu_3"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/ml_icon"
+            android:contentDescription="@null" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@id/ml_t3_text"
+            android:background="@drawable/ml_dotted" />
+    </RelativeLayout>
+
+    <!-- stumenu 4 -->
+
+    <RelativeLayout
+        android:id="@+id/ml_tea_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/ml_t4_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ml_message"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/ml_t4_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/ml_t4_img"
+            android:text="@string/ml_teamenu_4"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/ml_icon"
+            android:contentDescription="@null" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@id/ml_t4_text"
+            android:background="@drawable/ml_dotted" />
+    </RelativeLayout>
+
+    <!-- stumenu 5 -->
+
+    <RelativeLayout
+        android:id="@+id/ml_tea_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/ml_t5_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ml_advance"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/ml_t5_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/ml_t5_img"
+            android:text="@string/ml_teamenu_5"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/ml_icon"
+            android:contentDescription="@null" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@id/ml_t5_text"
+            android:background="@drawable/ml_dotted" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ml_stu_menu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <!-- stumenu 1 -->
+
+    <RelativeLayout
+        android:id="@+id/ml_stu_1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:background="@drawable/click_effect" >
+
+        <ImageView
+            android:id="@+id/ml_s1_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ml_search"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/ml_s1_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/ml_s1_img"
+            android:text="@string/ml_stumenu_1"
+            android:layout_marginLeft="15dp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/size3" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ml_icon"
+            android:contentDescription="@null" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/ml_dotted" />
+    </RelativeLayout>
+
+	<!-- stumenu 2 -->
+
+    <RelativeLayout
+        android:id="@+id/ml_stu_2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:background="@drawable/click_effect" >
+
+        <ImageView
+            android:id="@+id/ml_s2_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ml_search"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/ml_s2_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/ml_s2_img"
+            android:text="@string/ml_stumenu_2"
+            android:layout_marginLeft="15dp"
+            android:textColor="@android:color/white" 
+            android:textSize="@dimen/size3"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ml_icon"
+            android:contentDescription="@null" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/ml_dotted" />
+    </RelativeLayout>
+    
+    <!-- stumenu 3 -->
+
+    <RelativeLayout
+        android:id="@+id/ml_stu_3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:background="@drawable/click_effect" >
+
+        <ImageView
+            android:id="@+id/ml_s3_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ml_search"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/ml_s3_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/ml_s3_img"
+            android:text="@string/ml_stumenu_3"
+            android:layout_marginLeft="15dp"
+            android:textColor="@android:color/white" 
+            android:textSize="@dimen/size3"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ml_icon"
+            android:contentDescription="@null" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/ml_dotted" />
+    </RelativeLayout>
+    
+    <!-- stumenu 4 -->
+
+    <RelativeLayout
+        android:id="@+id/ml_stu_4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:background="@drawable/click_effect" >
+
+        <ImageView
+            android:id="@+id/ml_s4_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ml_search"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/ml_s4_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/ml_s4_img"
+            android:text="@string/ml_stumenu_4"
+            android:layout_marginLeft="15dp"
+            android:textColor="@android:color/white" 
+            android:textSize="@dimen/size3"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ml_icon"
+            android:contentDescription="@null" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/ml_dotted" />
+    </RelativeLayout>
+    
+    <!-- stumenu 5 -->
+
+    <RelativeLayout
+        android:id="@+id/ml_stu_5"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:background="@drawable/click_effect" >
+
+        <ImageView
+            android:id="@+id/ml_s5_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ml_search"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/ml_s5_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/ml_s5_img"
+            android:text="@string/ml_stumenu_5"
+            android:layout_marginLeft="15dp"
+            android:textColor="@android:color/white" 
+            android:textSize="@dimen/size3"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ml_icon"
+            android:contentDescription="@null" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/ml_dotted" />
+    </RelativeLayout>
+</LinearLayout>

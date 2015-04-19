@@ -1,5 +1,7 @@
 package com.septinary.xbwapp.base;
 
+import com.septinary.xbwapp.utils.AnimationToast;
+
 import butterknife.ButterKnife;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -30,6 +32,14 @@ public abstract class BaseFragment extends Fragment{
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
+		AnimationToast.getInstance().destroy();
 		ButterKnife.reset(this);
 	}
+	
+	@Override
+	public void onPause() {
+		super.onPause();
+		AnimationToast.getInstance().destroy();
+	}
+	
 }
